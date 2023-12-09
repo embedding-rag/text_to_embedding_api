@@ -23,7 +23,7 @@ jobs:
       run: |
         IMAGE_TAG=latest
         TIMESTAMP=$(date +'%Y%m%d%H%M')
-        FULL_IMAGE_NAME=${{ secrets.DOCKERHUB_USERNAME }}/ibegyourpardon/text_to_embedding_api:${IMAGE_TAG}
+        FULL_IMAGE_NAME=${{ secrets.DOCKERHUB_USERNAME }}/text_to_embedding_api:${IMAGE_TAG}
 
         docker buildx create --use
         docker buildx build --platform linux/amd64,linux/arm64 -t $FULL_IMAGE_NAME -t $FULL_IMAGE_NAME-$TIMESTAMP . --push
