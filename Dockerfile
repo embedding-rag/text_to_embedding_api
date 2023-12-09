@@ -9,7 +9,7 @@ COPY . /app
 
 # Install the required Python packages using the Aliyun mirror
 # RUN pip install --no-cache-dir -r requirements.txt --index-url=https://mirrors.aliyun.com/pypi/simple/
-
+RUN pip install -r requirements.txt
 # Expose the port that the web service will be running on
 EXPOSE 8000
 
