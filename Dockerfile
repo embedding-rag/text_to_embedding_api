@@ -15,6 +15,10 @@ RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.d
     && git lfs install
 RUN echo "Git LFS installed"
 
+# Install the required Python packages using the Aliyun mirror
+RUN pip install -r requirements.txt
+RUN echo "Python packages installed"
+
 # Change directory to /app/models and clone the git repository with LFS
 WORKDIR /app/models
 RUN echo "Working directory set to /app/models"
